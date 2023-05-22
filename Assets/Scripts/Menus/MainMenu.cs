@@ -6,6 +6,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
@@ -36,6 +37,10 @@ public class MainMenu : MonoBehaviour
     public bool StoryOneComplete = false;
     public bool StoryTwoComplete = false;
 
+    [SerializeField] Button StoryOneButton;
+    [SerializeField] Button StoryTwoButton;
+
+    [SerializeField] Color cInactiveButtonColor = new Color(0.5f, 0.5f, 0.5f);
 
     void Start()
     {
@@ -69,7 +74,20 @@ public class MainMenu : MonoBehaviour
                 StorySelectorMenu.SetActive(true); //display story select menu
                 MainMenuCamera.SetActive(true); //enable main menu camera
 
-                if (StoryOneComplete && StoryTwoComplete) //if both stories have been completed display completed menu instead
+                //if story completed disable the button
+                if (StoryOneComplete)
+                {
+                    StoryOneButton.interactable = false;
+                    StoryOneButton.image.color = cInactiveButtonColor;
+                }
+                if (StoryTwoComplete)
+                {
+                    StoryTwoButton.interactable = false;
+                    StoryTwoButton.image.color = cInactiveButtonColor;
+                }
+
+                //if both stories have been completed display completed menu instead
+                if (StoryOneComplete && StoryTwoComplete) 
                 {
                     UpdateCurrentMenu(Menus.Completed);
                 }
@@ -98,6 +116,7 @@ public class MainMenu : MonoBehaviour
         StorySelectorMenu.SetActive(false);
         InGameMenu.SetActive(false);
         StoriesCompleted.SetActive(false);
+
     }
 
 

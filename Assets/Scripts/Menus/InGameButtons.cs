@@ -11,6 +11,7 @@ using UnityEngine.SceneManagement;
 public class InGameButtons : MonoBehaviour
 {
     [SerializeField] MainMenu MainMenuRef;
+    Pause PauseRef;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,8 @@ public class InGameButtons : MonoBehaviour
         {
             gameObject.SetActive(false); //if still no menu hide
         }
+
+        PauseRef = GameObject.FindObjectOfType<Pause>(); //find pause script
     }
 
     /// <summary>
@@ -42,6 +45,12 @@ public class InGameButtons : MonoBehaviour
             MainMenuRef.StoryTwoComplete = true;
         }
         MainMenuRef.UpdateCurrentMenu(MainMenu.Menus.Select); //display story select menu
+
+        //hide pause menu
+        if (PauseRef != null)
+        {
+            PauseRef.HidePause();
+        }
     }
 
     /// <summary>
@@ -59,5 +68,11 @@ public class InGameButtons : MonoBehaviour
             SceneManager.UnloadSceneAsync("StoryTwo");
         }
         MainMenuRef.UpdateCurrentMenu(MainMenu.Menus.Select); //display story select menu
+
+        //hide pause menu
+        if (PauseRef != null) 
+        {
+            PauseRef.HidePause();
+        }
     }
 }
