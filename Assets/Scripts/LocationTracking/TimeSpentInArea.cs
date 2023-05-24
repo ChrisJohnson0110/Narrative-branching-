@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TimeSpentInArea : MonoBehaviour
 {
+    [SerializeField] float fTimeSpentInArea = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,15 @@ public class TimeSpentInArea : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            fTimeSpentInArea += Time.deltaTime;
+        }
         
     }
 }

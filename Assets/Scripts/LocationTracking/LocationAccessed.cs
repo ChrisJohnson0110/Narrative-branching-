@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LocationAccessed : MonoBehaviour
 {
+    bool bAreaAccessed = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +16,11 @@ public class LocationAccessed : MonoBehaviour
     void Update()
     {
         
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+
     }
 }
