@@ -10,6 +10,7 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     [SerializeField] GameObject gDialogBox;
+    bool bPlayerHasInteractedWith = false;
 
     //popup timer
     float fTimer;
@@ -18,19 +19,19 @@ public class Character : MonoBehaviour
 
     private void Start()
     {
-        fTimer = fTimerStart;
-        gDialogBox.SetActive(false);
+        fTimer = fTimerStart; //set timer duration
+        gDialogBox.SetActive(false); //hide dialog box
     }
 
     private void Update()
     {
-        if (bTimerActive == true)
+        if (bTimerActive == true) //if the timer hould be running
         {
-            fTimer -= Time.deltaTime;
-            if (fTimer <= 0)
+            fTimer -= Time.deltaTime; //decrease the time
+            if (fTimer <= 0) //check if zero'd
             {
-                bTimerActive = false;
-                gDialogBox.SetActive(false);
+                bTimerActive = false; //disable timer
+                gDialogBox.SetActive(false); //hide dialog box
             }
         }
 
@@ -42,8 +43,10 @@ public class Character : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E))
             {
-                Debug.Log("interact");
-                gDialogBox.SetActive(true);
+                gDialogBox.SetActive(true); //show the characters dialog
+                bPlayerHasInteractedWith = true; //store that the character has been interacted with
+
+                //start the timer for how long the dialog will be visable
                 fTimer = fTimerStart;
                 bTimerActive = true;
             }

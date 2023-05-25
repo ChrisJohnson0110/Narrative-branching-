@@ -1,28 +1,21 @@
+/////////////////////////////////////////////////////////
+/// Creator : Chris Johnson
+/// Date Created : 25/05/2023
+/// Purpose : 
+/////////////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TimeSpentInArea : MonoBehaviour
 {
-    [SerializeField] float fTimeSpentInArea = 0;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public float fTimeSpentInArea = 0; //total time spent in area
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player") //if the player is within the collider
         {
-            fTimeSpentInArea += Time.deltaTime;
+            fTimeSpentInArea += Time.deltaTime; //increase the time the player has spent in the area
         }
         
     }
