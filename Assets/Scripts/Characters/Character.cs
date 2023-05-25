@@ -10,7 +10,16 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     [SerializeField] GameObject gDialogBox;
+
     bool bPlayerHasInteractedWith = false;
+
+    //quest?
+
+    //reward?
+
+    //dialong
+
+
 
     //popup timer
     float fTimer;

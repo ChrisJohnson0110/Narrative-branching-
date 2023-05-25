@@ -9,8 +9,8 @@ using UnityEngine;
 
 public class LocationTracker : MonoBehaviour
 {
-    List<GameObject> li_gLocationsAccessed = new List<GameObject>(); //will hold gameobjects that can be accessed
-    List<GameObject> li_gTimeSpentInEachArea = new List<GameObject>(); //will hold gameobjects that can be accessed
+    public List<GameObject> li_gLocationsAccessed = new List<GameObject>(); //will hold gameobjects that can be accessed
+    public List<GameObject> li_gTimeSpentInEachArea = new List<GameObject>(); //will hold gameobjects that can be accessed
 
     // Start is called before the first frame update
     void Start()

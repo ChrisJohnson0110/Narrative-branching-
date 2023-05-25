@@ -28,7 +28,8 @@ public class Dash : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit))
+            LayerMask layerMask = 3 << LayerMask.NameToLayer("MoveRayCanHit");
+            if (Physics.Raycast(ray, out RaycastHit hit, 100, layerMask))
             {
                 navAgent.SetDestination(hit.point); // set destination to hit pos
 
