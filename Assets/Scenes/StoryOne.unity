@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 174280473}
   - component: {fileID: 174280472}
   - component: {fileID: 174280471}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Slope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -885,7 +885,7 @@ GameObject:
   - component: {fileID: 694240534}
   - component: {fileID: 694240533}
   - component: {fileID: 694240537}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pickup
   m_TagString: Pickup
   m_Icon: {fileID: 0}
@@ -1046,7 +1046,7 @@ GameObject:
   - component: {fileID: 1104921217}
   - component: {fileID: 1104921222}
   - component: {fileID: 1104921221}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Character
   m_TagString: Character
   m_Icon: {fileID: 0}
@@ -1336,7 +1336,7 @@ GameObject:
   - component: {fileID: 1360968145}
   - component: {fileID: 1360968144}
   - component: {fileID: 1360968143}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1533,7 +1533,7 @@ GameObject:
   - component: {fileID: 1416791701}
   - component: {fileID: 1416791700}
   - component: {fileID: 1416791699}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pickup (1)
   m_TagString: Pickup
   m_Icon: {fileID: 0}
@@ -1644,7 +1644,7 @@ GameObject:
   - component: {fileID: 1565337918}
   - component: {fileID: 1565337917}
   - component: {fileID: 1565337916}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pickup (2)
   m_TagString: Pickup
   m_Icon: {fileID: 0}
