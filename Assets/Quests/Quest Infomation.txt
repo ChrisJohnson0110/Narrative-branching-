@@ -1,0 +1,11 @@
+Quest scriptable objects are named after the location followed by the objective seperated with an underscore
+
+The infomation needed for a quest is as follows:
+
+Quest Prompt - this is the prompt that the player will be given to help them complete the quest
+Completed Dialog - this is the text that will be displayed on the quest being completed
+Quest objective - this is the item that needs to be picked up inorder to complete the quest
+Area to visit - this is the area that needs to be visited in order for the quest to be given
+
+Special condition met - this is the dialog that will be displayed if the starting condition is met
+special condition - this is the area that the player needs to spend the most time in in order to recieve the special condition

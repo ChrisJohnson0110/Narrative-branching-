@@ -9,19 +9,28 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public bool bObtained = false; //
+    [SerializeField] GameObject goInteractObject; //
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="other"></param>
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player") //if the player walks into
         {
-            GameObject.FindAnyObjectByType<PickupTracker>().PickUpObject(this.gameObject); //add to list of picked up items
+            if (Input.GetKey(KeyCode.E))
+            {
+                GameObject.FindAnyObjectByType<PickupTracker>().PickUpObject(this.gameObject); //add to list of picked up items
 
-            //hide the object
-            gameObject.GetComponent<MeshRenderer>().enabled = false;
-            gameObject.GetComponent<Collider>().enabled = false;
+                //hide the object
+                gameObject.GetComponent<MeshRenderer>().enabled = false;
+                gameObject.GetComponent<Collider>().enabled = false;
+                bObtained = true;
 
-
-            //pickup pop up on screen
-
+                goInteractObject.SetActive(false); //hide the interact dialog
+            }
         }
     }
 }

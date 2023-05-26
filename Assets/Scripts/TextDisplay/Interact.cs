@@ -9,29 +9,33 @@ using UnityEngine;
 
 public class Interact : MonoBehaviour
 {
-    [SerializeField] GameObject gPopUp;
-    [SerializeField] float fPopupDuration = 5f;
+    [SerializeField] GameObject gPopUp; //
 
+    /// <summary>
+    /// 
+    /// </summary>
     private void Start()
     {
         gPopUp.SetActive(false);
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player") //if the player walks into
         {
-            //show interact pop up
-
-            //GameObject popup = Instantiate(gPopUp, transform.position, transform.rotation);
-            //popup.transform.transform.SetParent(this.gameObject.transform);
-            //Destroy(popup, fPopupDuration);
-
             gPopUp.SetActive(true);
 
         }
     }
     
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="other"></param>
     void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player") //if the player walks into

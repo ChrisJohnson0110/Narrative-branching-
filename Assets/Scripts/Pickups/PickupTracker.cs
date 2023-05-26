@@ -9,19 +9,7 @@ using UnityEngine;
 
 public class PickupTracker : MonoBehaviour
 {
-    public List<GameObject> li_gPickedUpObjects;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public List<GameObject> li_gPickedUpObjects; //
     
     /// <summary>
     /// add the given object to the list of items picked up
@@ -29,6 +17,7 @@ public class PickupTracker : MonoBehaviour
     public void PickUpObject(GameObject a_gPickup)
     {
         li_gPickedUpObjects.Add(a_gPickup);
+
     }
 
 }

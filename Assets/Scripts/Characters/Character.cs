@@ -13,12 +13,15 @@ public class Character : MonoBehaviour
 
     bool bPlayerHasInteractedWith = false;
 
+
+    public string sIdleDialog = ""; //default dialog if no conditions met
+
     //quest?
+    public Quest qCharacterQuest;
 
-    //reward?
 
-    //dialong
 
+    public bool bIsTheQuestActive; //is the quest active
 
 
     //popup timer
@@ -52,16 +55,44 @@ public class Character : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E))
             {
-                gDialogBox.SetActive(true); //show the characters dialog
-                bPlayerHasInteractedWith = true; //store that the character has been interacted with
-
-                //start the timer for how long the dialog will be visable
-                fTimer = fTimerStart;
-                bTimerActive = true;
+                InteractedWith();
             }
         }
     }
 
 
 
+    void InteractedWith()
+    {
+        gDialogBox.SetActive(true); //show the characters dialog
+        bPlayerHasInteractedWith = true; //store that the character has been interacted with
+
+        //start the timer for how long the dialog will be visable
+        fTimer = fTimerStart;
+        bTimerActive = true;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
