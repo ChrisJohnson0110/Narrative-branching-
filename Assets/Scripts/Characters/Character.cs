@@ -26,6 +26,11 @@ public class Character : MonoBehaviour
     [SerializeField] float fTimerStart = 5f;
     bool bTimerActive = false;
 
+    //interact cooldown
+    float fTimerInteract;
+    [SerializeField] float fTimeBetweenInteraction = 1f;
+    bool bInteractTimerActive = false;
+
     private void Start()
     {
         fTimer = fTimerStart; //set timer duration
@@ -44,6 +49,15 @@ public class Character : MonoBehaviour
             }
         }
 
+        if (bInteractTimerActive == true)
+        {
+            fTimerInteract -= Time.deltaTime;
+            if (fTimerInteract <= 0) //check if time up
+            {
+                bInteractTimerActive = false;
+            }
+        }
+        
     }
 
     private void OnTriggerStay(Collider other)
@@ -52,7 +66,12 @@ public class Character : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E))
             {
-                InteractedWith();
+                if (bInteractTimerActive == false)
+                {
+                    InteractedWith();
+                    bInteractTimerActive = true;
+                    fTimerInteract = fTimeBetweenInteraction;
+                }
             }
         }
     }
@@ -62,22 +81,19 @@ public class Character : MonoBehaviour
     void InteractedWith()
     {
         LocationTracker lt = FindAnyObjectByType<LocationTracker>();
-        Debug.Log("a");
-        if (QuestHandInCheck() == true) //if quest can be handed in //hand in
+
+        if (QuestHandInCheck()) //if quest can be handed in //hand in
         {
             bIsTheQuestActive = false;
             bIsQuestCompleted = true;
             gDialogBox.gameObject.GetComponent<Text>().text = qCharacterQuest.sCompletedDialog;
-            Debug.Log("b");
         }
         else if (bIsQuestCompleted == false) //is the quest not completed
         {
-            Debug.Log("c");
             if (lt.HasAreaBeenAccessed(qCharacterQuest.sAreaName) == true) //has the area required to start the quest been accessed
             {
                 bIsTheQuestActive = true;
                 gDialogBox.gameObject.GetComponent<Text>().text = qCharacterQuest.sQuestPrompt;
-                Debug.Log("d");
             }
             else //idle
             {
@@ -86,19 +102,19 @@ public class Character : MonoBehaviour
         }
         else //if quest not just handed in //if quest not active
         {
-            Debug.Log("e");
             if (bIsQuestCompleted == true) //if the quest is completed
             {
-                Debug.Log("f");
                 if (lt.GetMostVistedArea().gameObject.name == qCharacterQuest.sSpecialAreaName)
                 {
-                    Debug.Log("g");
                     gDialogBox.gameObject.GetComponent<Text>().text = qCharacterQuest.sSpecialConditionMetDialog;
+                }
+                else
+                {
+                    gDialogBox.gameObject.GetComponent<Text>().text = sIdleDialog;
                 }
             }
             else //idle 
             {
-                Debug.Log("h");
                 gDialogBox.gameObject.GetComponent<Text>().text = sIdleDialog;
             }
         }
@@ -122,9 +138,11 @@ public class Character : MonoBehaviour
             if (g.gameObject.name == qCharacterQuest.sItemName) //if the item needed for the quest has been found
             {
                 pt.RemovePickUpObject(g); //remove the item from the list
+                Debug.Log("true");
                 return true;
             }
         }
+        Debug.Log("false");
         return false;
     }
 
