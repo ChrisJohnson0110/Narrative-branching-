@@ -10,7 +10,7 @@ using UnityEngine;
 public class PickupTracker : MonoBehaviour
 {
     public List<GameObject> li_gPickedUpObjects; //
-    
+
     /// <summary>
     /// add the given object to the list of items picked up
     /// </summary>
@@ -19,5 +19,15 @@ public class PickupTracker : MonoBehaviour
         li_gPickedUpObjects.Add(a_gPickup);
 
     }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="a_gPickupToRemove"></param>
+    public void RemovePickUpObject(GameObject a_gPickupToRemove)
+    {
+        li_gPickedUpObjects.Remove(a_gPickupToRemove);
+    }
+
 
 }

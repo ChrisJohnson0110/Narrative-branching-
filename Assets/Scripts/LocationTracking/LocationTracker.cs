@@ -44,9 +44,19 @@ public class LocationTracker : MonoBehaviour
     /// </summary>
     /// <param area to check="a_gAreaToCheck"></param>
     /// <returns>if the area has been accessed</returns>
-    public bool HasAreaBeenAccessed(GameObject a_gAreaToCheck)
+    public bool HasAreaBeenAccessed(string a_sAreaFoundToCheck)
     {
-        return a_gAreaToCheck.GetComponent<LocationAccessed>().bAreaAccessed;
+        foreach (GameObject go in li_gLocationsAccessed) //check each areas
+        {
+            if (go.name == a_sAreaFoundToCheck) //find area to check
+            {
+                if (go.GetComponent<LocationAccessed>().bAreaAccessed == true) //get if accessed
+                {
+                    return true; //has been accessed
+                }
+            }
+        }
+        return false; //has not been accessed
     }
 
 

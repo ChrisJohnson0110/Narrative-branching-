@@ -6,22 +6,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Character : MonoBehaviour
 {
     [SerializeField] GameObject gDialogBox;
-
-    bool bPlayerHasInteractedWith = false;
-
 
     public string sIdleDialog = ""; //default dialog if no conditions met
 
     //quest?
     public Quest qCharacterQuest;
 
-
-
-    public bool bIsTheQuestActive; //is the quest active
+    public bool bIsTheQuestActive = false; //is the quest active
+    public bool bIsQuestCompleted = false; //is the quest completed
 
 
     //popup timer
@@ -64,8 +61,49 @@ public class Character : MonoBehaviour
 
     void InteractedWith()
     {
+        LocationTracker lt = FindAnyObjectByType<LocationTracker>();
+        Debug.Log("a");
+        if (QuestHandInCheck() == true) //if quest can be handed in //hand in
+        {
+            bIsTheQuestActive = false;
+            bIsQuestCompleted = true;
+            gDialogBox.gameObject.GetComponent<Text>().text = qCharacterQuest.sCompletedDialog;
+            Debug.Log("b");
+        }
+        else if (bIsQuestCompleted == false) //is the quest not completed
+        {
+            Debug.Log("c");
+            if (lt.HasAreaBeenAccessed(qCharacterQuest.sAreaName) == true) //has the area required to start the quest been accessed
+            {
+                bIsTheQuestActive = true;
+                gDialogBox.gameObject.GetComponent<Text>().text = qCharacterQuest.sQuestPrompt;
+                Debug.Log("d");
+            }
+            else //idle
+            {
+                gDialogBox.gameObject.GetComponent<Text>().text = sIdleDialog;
+            }
+        }
+        else //if quest not just handed in //if quest not active
+        {
+            Debug.Log("e");
+            if (bIsQuestCompleted == true) //if the quest is completed
+            {
+                Debug.Log("f");
+                if (lt.GetMostVistedArea().gameObject.name == qCharacterQuest.sSpecialAreaName)
+                {
+                    Debug.Log("g");
+                    gDialogBox.gameObject.GetComponent<Text>().text = qCharacterQuest.sSpecialConditionMetDialog;
+                }
+            }
+            else //idle 
+            {
+                Debug.Log("h");
+                gDialogBox.gameObject.GetComponent<Text>().text = sIdleDialog;
+            }
+        }
+
         gDialogBox.SetActive(true); //show the characters dialog
-        bPlayerHasInteractedWith = true; //store that the character has been interacted with
 
         //start the timer for how long the dialog will be visable
         fTimer = fTimerStart;
@@ -73,10 +111,22 @@ public class Character : MonoBehaviour
     }
 
 
-
-
-
-
+    /// <summary>
+    /// check if condition met to complete quest
+    /// </summary>
+    bool QuestHandInCheck()
+    {
+        PickupTracker pt = FindAnyObjectByType<PickupTracker>();
+        foreach (GameObject g in pt.li_gPickedUpObjects)
+        {
+            if (g.gameObject.name == qCharacterQuest.sItemName) //if the item needed for the quest has been found
+            {
+                pt.RemovePickUpObject(g); //remove the item from the list
+                return true;
+            }
+        }
+        return false;
+    }
 
 
 
