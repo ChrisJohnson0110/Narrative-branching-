@@ -9,8 +9,8 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    public bool bObtained = false; //
-    [SerializeField] GameObject goInteractObject; //
+    public bool bObtained = false; //has this item been obtained
+    [SerializeField] GameObject goInteractObject; // interact dialog popup
 
     /// <summary>
     /// 
@@ -30,6 +30,13 @@ public class Pickup : MonoBehaviour
                 bObtained = true;
 
                 goInteractObject.SetActive(false); //hide the interact dialog
+
+                //disable children
+                foreach (Transform tChild in transform)
+                {
+                    tChild.gameObject.SetActive(false);
+                }
+
             }
         }
     }

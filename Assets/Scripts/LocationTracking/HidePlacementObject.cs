@@ -9,6 +9,6 @@ public class HidePlacementObject : MonoBehaviour
     /// </summary>
     void Awake()
     {
-        //Destroy(this.gameObject);
+        Destroy(this.gameObject);
     }
 }

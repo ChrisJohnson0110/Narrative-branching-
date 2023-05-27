@@ -138,11 +138,9 @@ public class Character : MonoBehaviour
             if (g.gameObject.name == qCharacterQuest.sItemName) //if the item needed for the quest has been found
             {
                 pt.RemovePickUpObject(g); //remove the item from the list
-                Debug.Log("true");
                 return true;
             }
         }
-        Debug.Log("false");
         return false;
     }
 
