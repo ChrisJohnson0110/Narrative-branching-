@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 162f9586eb955c140bab56669c97fb46, type: 3}
   m_Name: Snow_Branch_SnowStay
   m_EditorClassIdentifier: 
-  sQuestPrompt: 1
-  sCompletedDialog: 2
-  sItemName: Branch
-  sAreaName: SnowHillAccessed
-  sSpecialConditionMetDialog: 3
-  sSpecialAreaName: SnowStay
+  sQuestConditionOne: SnowHillAccessed
+  sQuestConditionTwo: SnowStay
+  sQuestPromptOne: Find signs of life
+  sQuestPromptTwo: Find ski's
+  sQuestOneItem: Plant
+  sQuestTwoItem: Ski
+  sQuestCompleteOne: Thank you for finding this, this gives me hope
+  sQuestCompleteTwo: Thank you for finding me thses, they will make exploring easier

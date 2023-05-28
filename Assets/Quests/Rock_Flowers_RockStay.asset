@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 162f9586eb955c140bab56669c97fb46, type: 3}
   m_Name: Rock_Flowers_RockStay
   m_EditorClassIdentifier: 
-  sQuestPrompt: Look in the rocky mountains and find me some blue flowers
-  sCompletedDialog: Thank you for finding me these flowers they're just what I need
-  sItemName: RockyFlowers
-  sAreaName: RockyMountains
-  sSpecialConditionMetDialog: I see you've spent a lot of time in the mountains,
-    see if you can find the cave while you're there im sure I lost something when
-    I last visited
-  sSpecialAreaName: RockStay
+  sQuestConditionOne: 
+  sQuestConditionTwo: 
+  sQuestPromptOne: 
+  sQuestPromptTwo: 
+  sQuestOneItem: 
+  sQuestTwoItem: 
+  sQuestCompleteOne: 
+  sQuestCompleteTwo: 

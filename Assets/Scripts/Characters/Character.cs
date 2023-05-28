@@ -13,12 +13,18 @@ public class Character : MonoBehaviour
     [SerializeField] GameObject gDialogBox;
 
     public string sIdleDialog = ""; //default dialog if no conditions met
+    public string sQuestHint = ""; //default dialog if no conditions met
 
     //quest?
     public Quest qCharacterQuest;
 
-    public bool bIsTheQuestActive = false; //is the quest active
-    public bool bIsQuestCompleted = false; //is the quest completed
+    bool bIsQuestOneActive = false; //quest one active
+    bool bIsQuestTwoActive = false; //qwust two active
+
+    bool bCanPickQuestOne = false;
+    bool bCanPickQuestTwo = false;
+
+    bool bQuestComplete = false;
 
 
     //popup timer
@@ -73,57 +79,98 @@ public class Character : MonoBehaviour
                     fTimerInteract = fTimeBetweenInteraction;
                 }
             }
+            if (Input.GetKey(KeyCode.Alpha1))
+            {
+                QuestPick(1);
+            }
+            else if (Input.GetKey(KeyCode.Alpha2))
+            {
+                QuestPick(2);
+            }
         }
     }
 
+    /// <summary>
+    /// set the active quest based on given number
+    /// </summary>
+    /// <param name="a_iQuestToActivate"></param>
+    void QuestPick(int a_iQuestToActivate)
+    {
+        if (a_iQuestToActivate == 1)
+        {
+            bIsQuestOneActive = true;
+        }
+        else if (a_iQuestToActivate == 2)
+        {
+            bIsQuestTwoActive = true;
+        }
+    }
 
 
     void InteractedWith()
     {
         LocationTracker lt = FindAnyObjectByType<LocationTracker>();
 
-        if (QuestHandInCheck()) //if quest can be handed in //hand in
+        gDialogBox.gameObject.GetComponent<Text>().text = sIdleDialog; //idle dialog
+
+        //if neither quest is active
+        if (bIsQuestOneActive == false)
         {
-            bIsTheQuestActive = false;
-            bIsQuestCompleted = true;
-            gDialogBox.gameObject.GetComponent<Text>().text = qCharacterQuest.sCompletedDialog;
-        }
-        else if (bIsQuestCompleted == false) //is the quest not completed
-        {
-            if (lt.HasAreaBeenAccessed(qCharacterQuest.sAreaName) == true) //has the area required to start the quest been accessed
+            if (bIsQuestTwoActive == false)
             {
-                bIsTheQuestActive = true;
-                gDialogBox.gameObject.GetComponent<Text>().text = qCharacterQuest.sQuestPrompt;
-            }
-            else //idle
-            {
-                gDialogBox.gameObject.GetComponent<Text>().text = sIdleDialog;
-            }
-        }
-        else //if quest not just handed in //if quest not active
-        {
-            if (bIsQuestCompleted == true) //if the quest is completed
-            {
-                if (lt.GetMostVistedArea().gameObject.name == qCharacterQuest.sSpecialAreaName)
+
+                if (bQuestComplete == false) //if quest not completed
                 {
-                    gDialogBox.gameObject.GetComponent<Text>().text = qCharacterQuest.sSpecialConditionMetDialog;
+                    if (lt.HasAreaBeenAccessed(qCharacterQuest.sQuestConditionOne) == true) //if area has been accessed
+                    {
+                        bCanPickQuestOne = true;
+                    }
+                    if (lt.GetMostVistedArea().gameObject.name == qCharacterQuest.sQuestConditionTwo) //if the most visited area is
+                    {
+                        bCanPickQuestTwo = true;
+                    }
+
+                    if (bCanPickQuestOne | bCanPickQuestTwo) //if quest one or two can be picked
+                    {
+                        gDialogBox.gameObject.GetComponent<Text>().text = "Here are the quests I can give: <color=red>Quest one-" + bCanPickQuestOne.ToString() +
+                            "</color> <color=blue>Quest two-" + bCanPickQuestTwo.ToString() + "</color> Press one or two to pick";
+                    }
                 }
-                else
-                {
-                    gDialogBox.gameObject.GetComponent<Text>().text = sIdleDialog;
-                }
-            }
-            else //idle 
-            {
-                gDialogBox.gameObject.GetComponent<Text>().text = sIdleDialog;
+
             }
         }
 
+        if (bQuestComplete == true) //if either quest has been completed
+        {
+            gDialogBox.gameObject.GetComponent<Text>().text = sQuestHint;
+        }
 
+        if (bIsQuestOneActive == true)
+        {
+            if (QuestHandInCheck() == true) //if quest complete
+            {
+                gDialogBox.gameObject.GetComponent<Text>().text = qCharacterQuest.sQuestCompleteOne;
+                bQuestComplete = true;
+            }
+            else
+            {
+                gDialogBox.gameObject.GetComponent<Text>().text = qCharacterQuest.sQuestPromptOne;
+            }
+        }
+        else if (bIsQuestTwoActive == true)
+        {
+            if (QuestHandInCheck() == true) //if quest complete
+            {
+                gDialogBox.gameObject.GetComponent<Text>().text = qCharacterQuest.sQuestCompleteTwo;
+                bQuestComplete = true;
+            }
+            else
+            {
+                gDialogBox.gameObject.GetComponent<Text>().text = qCharacterQuest.sQuestPromptTwo;
+            }
+        }
 
-
-
-
+        
 
 
         gDialogBox.SetActive(true); //show the characters dialog
@@ -140,12 +187,24 @@ public class Character : MonoBehaviour
     bool QuestHandInCheck()
     {
         PickupTracker pt = FindAnyObjectByType<PickupTracker>();
+
         foreach (GameObject g in pt.li_gPickedUpObjects)
         {
-            if (g.gameObject.name.Contains(qCharacterQuest.sItemName)) //if the item needed for the quest has been found
+            if (bIsQuestOneActive == true) //if quest one is active
             {
-                pt.RemovePickUpObject(g); //remove the item from the list
-                return true;
+                if (g.gameObject.name.Contains(qCharacterQuest.sQuestOneItem)) //if the item needed for quest one is found
+                {
+                    pt.RemovePickUpObject(g); //remove the item from the list
+                    return true;
+                }
+            }
+            else if (bIsQuestTwoActive == true) //if quest two is active
+            {
+                if (g.gameObject.name.Contains(qCharacterQuest.sQuestTwoItem)) //if the item needed for quest two is found
+                {
+                    pt.RemovePickUpObject(g); //remove the item from the list
+                    return true;
+                }
             }
         }
         return false;

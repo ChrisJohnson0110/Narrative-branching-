@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class IdleDialogGiver : MonoBehaviour
 {
-    [SerializeField] List<string> li_sIdleDialogOptions = new List<string>();
+    [Multiline] [SerializeField] List<string> li_sIdleDialogOptions = new List<string>();
     List<string> li_sDialogWorkingList = new List<string>();
 
     // Start is called before the first frame update

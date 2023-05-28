@@ -10,18 +10,17 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Quests", menuName = "ScriptableObjects/Quest")]
 public class Quest : ScriptableObject
 {
-    //regualar quest
-    public string sQuestPrompt = ""; //dialog for quest
-    public string sCompletedDialog = ""; //dialog to show on completion
-    public string sItemName = ""; //item to obtain or complete interaction with // the bObtained value of the pick up script determines this
-    public string sAreaName = ""; //quest condition
+    public string sQuestConditionOne = ""; //area accessed
+    public string sQuestConditionTwo = ""; //area stayed
 
+    public string sQuestPromptOne = ""; //quest one
+    public string sQuestPromptTwo = ""; //quest two
 
-    //special condition dialog
-    public string sSpecialConditionMetDialog = ""; //dialog to display if the 
-    public string sSpecialAreaName = ""; //time to have spent the most time in to meet special condition
+    public string sQuestOneItem = ""; //item required for quest one
+    public string sQuestTwoItem = ""; //item required for quest two
 
-
+    public string sQuestCompleteOne = ""; //complete one message
+    public string sQuestCompleteTwo = ""; //complete two message
 }
 
 

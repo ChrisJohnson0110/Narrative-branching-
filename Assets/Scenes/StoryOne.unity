@@ -20981,7 +20981,6 @@ Transform:
   m_Children:
   - {fileID: 640835880}
   - {fileID: 1141583314}
-  - {fileID: 1359441702}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26178,12 +26177,17 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1359441702}
+    m_TransformParent: {fileID: 1631936877}
     m_Modifications:
     - target: {fileID: 7714592934018086273, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
         type: 3}
       propertyPath: m_Name
       value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714592934018086276, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
+        type: 3}
+      propertyPath: sQuestHint
+      value: hint
       objectReference: {fileID: 0}
     - target: {fileID: 7714592934018086276, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
         type: 3}
@@ -26209,17 +26213,17 @@ PrefabInstance:
     - target: {fileID: 7714592934018086277, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.272838
+      value: 31.077805
       objectReference: {fileID: 0}
     - target: {fileID: 7714592934018086277, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.11027
+      value: 24.253109
       objectReference: {fileID: 0}
     - target: {fileID: 7714592934018086277, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.5326777
+      value: 5.0039797
       objectReference: {fileID: 0}
     - target: {fileID: 7714592934018086277, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
         type: 3}
@@ -27903,38 +27907,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 109336216}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1359441701
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1359441702}
-  m_Layer: 0
-  m_Name: CharacterTracker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1359441702
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1359441701}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 191105150}
-  m_Father: {fileID: 993396902}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1363483925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34246,6 +34218,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1631936877}
   - component: {fileID: 1631936876}
+  - component: {fileID: 1631936880}
+  - component: {fileID: 1631936879}
+  - component: {fileID: 1631936878}
   m_Layer: 0
   m_Name: NpcPlacer
   m_TagString: Untagged
@@ -34276,10 +34251,49 @@ Transform:
   m_LocalPosition: {x: -20.210064, y: -23.11311, z: 10.327267}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 191105150}
   m_Father: {fileID: 891576230}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1631936878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631936875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f174280e0ee1bd24babc39f7a064d4f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1631936879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631936875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38796740f8ab74342900fe17d314ca1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1631936880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631936875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2a9ff267eddb0e4a9abd77fed6408a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  li_sIdleDialogOptions:
+  - lol
 --- !u!1001 &1633784022
 PrefabInstance:
   m_ObjectHideFlags: 0
