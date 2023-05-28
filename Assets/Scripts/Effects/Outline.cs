@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////
 /// Creator : Chris Johnson
 /// Date Created : 24/05/2023
-/// Purpose : 
+/// Purpose : functions to apply and remove an outline to an object
 /////////////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;

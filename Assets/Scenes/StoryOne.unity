@@ -1076,7 +1076,7 @@ PrefabInstance:
     - target: {fileID: 5078343121163217912, guid: c6ac59f4f0beebc4aa6a9e0df36336aa,
         type: 3}
       propertyPath: m_Name
-      value: GrassStay
+      value: ForestStay
       objectReference: {fileID: 0}
     - target: {fileID: 5078343121163217914, guid: c6ac59f4f0beebc4aa6a9e0df36336aa,
         type: 3}
@@ -4237,12 +4237,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 385c2b636d5d1d8408b1ee53c805c698, type: 3}
---- !u!4 &191105150 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7714592934018086277, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1288697182}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &191945935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13381,6 +13375,53 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 385c2b636d5d1d8408b1ee53c805c698, type: 3}
+--- !u!1 &636030387
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 636030388}
+  - component: {fileID: 636030389}
+  m_Layer: 0
+  m_Name: Skis
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &636030388
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636030387}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -48.16, y: 0, z: -24.52}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 991682420}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &636030389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636030387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f632c9cbcf1b1438e6c1d656f96aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goItemToPlace: {fileID: 1865704831393312149, guid: 28fb64addcdb80346ad97d71bf396fa3,
+    type: 3}
+  v2AreaSize: {x: 3, y: 3}
 --- !u!1001 &637541716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20948,6 +20989,7 @@ Transform:
   - {fileID: 1724595873}
   - {fileID: 679609647}
   - {fileID: 1700424633}
+  - {fileID: 636030388}
   m_Father: {fileID: 891576230}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26172,96 +26214,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1288026501}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1288697182
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1631936877}
-    m_Modifications:
-    - target: {fileID: 7714592934018086273, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
-        type: 3}
-      propertyPath: m_Name
-      value: NPC
-      objectReference: {fileID: 0}
-    - target: {fileID: 7714592934018086276, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
-        type: 3}
-      propertyPath: sQuestHint
-      value: hint
-      objectReference: {fileID: 0}
-    - target: {fileID: 7714592934018086276, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
-        type: 3}
-      propertyPath: sIdleDialog
-      value: idle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7714592934018086276, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
-        type: 3}
-      propertyPath: qCharacterQuest
-      value: 
-      objectReference: {fileID: 11400000, guid: cf8d51fd8be057440931b82f65bc5ae7,
-        type: 2}
-    - target: {fileID: 7714592934018086276, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
-        type: 3}
-      propertyPath: fTimeBetweenInteraction
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7714592934018086277, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7714592934018086277, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 31.077805
-      objectReference: {fileID: 0}
-    - target: {fileID: 7714592934018086277, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 24.253109
-      objectReference: {fileID: 0}
-    - target: {fileID: 7714592934018086277, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5.0039797
-      objectReference: {fileID: 0}
-    - target: {fileID: 7714592934018086277, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7714592934018086277, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7714592934018086277, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7714592934018086277, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7714592934018086277, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7714592934018086277, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7714592934018086277, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2d53b7f840dce174ea96c1dc26dd3ae3, type: 3}
 --- !u!4 &1290368498 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cd528bedbe9343040914ce224716dcba,
@@ -34219,8 +34171,6 @@ GameObject:
   - component: {fileID: 1631936877}
   - component: {fileID: 1631936876}
   - component: {fileID: 1631936880}
-  - component: {fileID: 1631936879}
-  - component: {fileID: 1631936878}
   m_Layer: 0
   m_Name: NpcPlacer
   m_TagString: Untagged
@@ -34240,6 +34190,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38796740f8ab74342900fe17d314ca1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goCharacterPrefab: {fileID: 7714592934018086273, guid: 2d53b7f840dce174ea96c1dc26dd3ae3,
+    type: 3}
+  v2AreaToSpawnNpcs: {x: 30, y: 30}
+  qQuestsToGiveNpcs:
+  - {fileID: 11400000, guid: cf8d51fd8be057440931b82f65bc5ae7, type: 2}
+  - {fileID: 11400000, guid: cf8d51fd8be057440931b82f65bc5ae7, type: 2}
+  - {fileID: 11400000, guid: cf8d51fd8be057440931b82f65bc5ae7, type: 2}
+  - {fileID: 11400000, guid: cf8d51fd8be057440931b82f65bc5ae7, type: 2}
+  - {fileID: 11400000, guid: cf8d51fd8be057440931b82f65bc5ae7, type: 2}
+  - {fileID: 11400000, guid: cf8d51fd8be057440931b82f65bc5ae7, type: 2}
+  - {fileID: 11400000, guid: cf8d51fd8be057440931b82f65bc5ae7, type: 2}
 --- !u!4 &1631936877
 Transform:
   m_ObjectHideFlags: 0
@@ -34248,38 +34209,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1631936875}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.210064, y: -23.11311, z: 10.327267}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 191105150}
+  m_Children: []
   m_Father: {fileID: 891576230}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1631936878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631936875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f174280e0ee1bd24babc39f7a064d4f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1631936879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631936875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38796740f8ab74342900fe17d314ca1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1631936880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34293,7 +34229,61 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   li_sIdleDialogOptions:
-  - lol
+  - 'I miss the world tree, it used to stand so
+
+    tall in this land'
+  - 'I love going to the rocky mountains, I used
+
+    to visit a cave there when
+    I was younger,
+
+    Im not sure where it was'
+  - 'I love the farms in the autumn they bring me
+
+    such joy'
+  - "I love the rune rock in the desert it shows \nyou the true meaning of this world"
+  - 'I once visited the forest and stumbled upon
+
+    a clearing filled with fairies'
+  - "I love hiking the snowy mountains, I wish I\nwas still in my youth and could
+    visit them \nagain"
+  - 'Once when I was stranded in the desert
+
+    without any water I was lucky enough
+    to
+
+    stumble upon an oasis of wonders'
+  li_sHints:
+  - "I've heard about a magical rock in the desert,\n Im sure someone must be interested
+    to find\nout more about it"
+  - "I've heard rumors of an oasis in the desert \nmaybe you can find it, the location
+    of the\noasis is valuable to someone"
+  - 'In the mountains there''s tails of a cave,
+
+    if you''re lucky you might be
+    able to find it, the location of the
+
+    cave is valuable to someone'
+  - 'I''ve heard of a tall mountain in the snowy
+
+    wilderness, maybe you could
+    climb it,
+
+    I''m sure someone must be curios about what''s
+
+    up there'
+  - 'There was once a giant tree that stood in this
+
+    land, maybe you can find
+    hints of where it
+
+    used to be'
+  - 'I''ve heard tails of a magical area within the forest
+
+    maybe you can find
+    this land of fairys'
+  - "You should try to find the farm land in the \nautumn forest I've heard someones
+    trying\nto find it"
 --- !u!1001 &1633784022
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37183,7 +37173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f219b003fa24064697e4ffd4f9241c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fDashSpeed: 100
+  fDashSpeed: 25
   fDashDuration: 0.5
 --- !u!4 &1743185964 stripped
 Transform:

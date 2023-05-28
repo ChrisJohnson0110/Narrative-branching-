@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.23227417, g: 0.4716981, b: 0.11347453, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -160,7 +160,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: eb15b630a09860a4180028d159c58808, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -210,9 +210,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gDialogBox: {fileID: 7714592932731177707}
   sIdleDialog: 
+  sQuestHint: 
   qCharacterQuest: {fileID: 0}
-  bIsTheQuestActive: 0
   fTimerStart: 3.5
+  fTimeBetweenInteraction: 1
 --- !u!1 &8558209302911422145
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,17 +399,17 @@ PrefabInstance:
     - target: {fileID: 8160054835367492723, guid: 65b3404a6d852ca4798861c5c9445a42,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.07413671
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8160054835367492723, guid: 65b3404a6d852ca4798861c5c9445a42,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.9245283
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8160054835367492723, guid: 65b3404a6d852ca4798861c5c9445a42,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.21113311
+      value: 0.16129029
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65b3404a6d852ca4798861c5c9445a42, type: 3}

@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////
 /// Creator : Chris Johnson
 /// Date Created : 25/05/2023
-/// Purpose : 
+/// Purpose : hold all of the trackers for both accessed and stayed locations
 /////////////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ public class LocationTracker : MonoBehaviour
     public List<GameObject> li_gTimeSpentInEachArea = new List<GameObject>(); //will hold gameobjects that can be accessed
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         GetTimeSpentInAreaList(); //load all time spent in area scripts into list
         GetAreaAccessedList(); //load all area accessed scripts into list
@@ -25,17 +25,18 @@ public class LocationTracker : MonoBehaviour
     /// <returns> the most visted area</returns>
     public GameObject GetMostVistedArea()
     {
-        GameObject gMostVisitedArea = new GameObject();
-        float HighestValue = 0;
-        foreach (GameObject g in li_gTimeSpentInEachArea)
+        GameObject gMostVisitedArea = new GameObject(); //store most visted
+        float HighestValue = 0; //store highest value
+
+        foreach (GameObject g in li_gTimeSpentInEachArea) //check each time spent in area
         {
-            if (g.GetComponent<TimeSpentInArea>().fTimeSpentInArea >= HighestValue)
+            if (g.GetComponent<TimeSpentInArea>().fTimeSpentInArea >= HighestValue) //if value higher than highest found so far
             {
-                gMostVisitedArea = g;
-                HighestValue = g.GetComponent<TimeSpentInArea>().fTimeSpentInArea;
+                gMostVisitedArea = g; //hold new highest
+                HighestValue = g.GetComponent<TimeSpentInArea>().fTimeSpentInArea; //store value
             }
         }
-        return gMostVisitedArea;
+        return gMostVisitedArea; //return the most visted area
     }
 
 
@@ -48,7 +49,7 @@ public class LocationTracker : MonoBehaviour
     {
         foreach (GameObject go in li_gLocationsAccessed) //check each areas
         {
-            if (go.name == a_sAreaFoundToCheck) //find area to check
+            if (a_sAreaFoundToCheck.Contains(go.name)) //find area to check
             {
                 if (go.GetComponent<LocationAccessed>().bAreaAccessed == true) //get if accessed
                 {

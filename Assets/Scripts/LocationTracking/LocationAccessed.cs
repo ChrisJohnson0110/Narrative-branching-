@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////
 /// Creator : Chris Johnson
 /// Date Created : 25/05/2023
-/// Purpose : 
+/// Purpose : if player enters the attached collider record it
 /////////////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;

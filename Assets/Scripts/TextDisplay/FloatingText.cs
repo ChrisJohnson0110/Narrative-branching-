@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////
 /// Creator : Chris Johnson
 /// Date Created : 24/05/2023
-/// Purpose : 
+/// Purpose : add text that will float within the scene and aim towards the camera
 /////////////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
@@ -20,15 +20,15 @@ public class FloatingText : MonoBehaviour
     {
         worldSpaceCanvas = GameObject.FindGameObjectWithTag("WorldSpaceCanvas").transform;
         mainCamera = Camera.main.transform;
-        unit = transform.parent;
+        unit = transform.parent; 
 
-        transform.SetParent(worldSpaceCanvas);
+        transform.SetParent(worldSpaceCanvas); //attach to canvas
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.rotation = Quaternion.LookRotation(transform.position - mainCamera.position);
-        transform.position = unit.position + offset;
+        transform.rotation = Quaternion.LookRotation(transform.position - mainCamera.position); //look at camera
+        transform.position = unit.position + offset; //keep text in position
     }
 }

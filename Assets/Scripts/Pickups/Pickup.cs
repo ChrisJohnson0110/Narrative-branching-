@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////
 /// Creator : Chris Johnson
 /// Date Created : 24/05/2023
-/// Purpose : 
+/// Purpose : allow the player to pick this object up
 /////////////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
@@ -13,9 +13,8 @@ public class Pickup : MonoBehaviour
     [SerializeField] GameObject goInteractObject; // interact dialog popup
 
     /// <summary>
-    /// 
+    /// if the player interacts with hide this gameobject and save that its been picked up
     /// </summary>
-    /// <param name="other"></param>
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player") //if the player walks into

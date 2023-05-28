@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 162f9586eb955c140bab56669c97fb46, type: 3}
   m_Name: Snow_Branch_SnowStay
   m_EditorClassIdentifier: 
-  sQuestConditionOne: SnowHillAccessed
-  sQuestConditionTwo: SnowStay
+  sQuestConditionOne: TreeStumpAccessed (UnityEngine.GameObject)
+  sQuestConditionTwo: ForestStay (UnityEngine.GameObject)
   sQuestPromptOne: Find signs of life
   sQuestPromptTwo: Find ski's
   sQuestOneItem: Plant
-  sQuestTwoItem: Ski
+  sQuestTwoItem: Skis
   sQuestCompleteOne: Thank you for finding this, this gives me hope
   sQuestCompleteTwo: Thank you for finding me thses, they will make exploring easier

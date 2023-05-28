@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////
 /// Creator : Chris Johnson
 /// Date Created : 26/05/2023
-/// Purpose : 
+/// Purpose : defining qualities of a quest
 /////////////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;

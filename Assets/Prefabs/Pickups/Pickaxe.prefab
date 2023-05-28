@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 231037654483969145}
   - component: {fileID: 4101883091287374643}
   - component: {fileID: 8415211736187684638}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pickaxe
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

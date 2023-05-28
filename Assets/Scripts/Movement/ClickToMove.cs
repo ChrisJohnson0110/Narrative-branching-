@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////
 /// Creator : Chris Johnson
 /// Date Created : 24/05/2023
-/// Purpose :
+/// Purpose :functions to move the attached gameobejct on the navmesh
 /////////////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;

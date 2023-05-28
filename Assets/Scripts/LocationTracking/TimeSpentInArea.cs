@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////
 /// Creator : Chris Johnson
 /// Date Created : 25/05/2023
-/// Purpose : 
+/// Purpose : store the amount of time spent in the attached objects trigger collider
 /////////////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;

@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////
 /// Creator : Chris Johnson
 /// Date Created : 24/05/2023
-/// Purpose :
+/// Purpose : handle mouse input, hover and click tracking
 /////////////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
@@ -14,14 +14,12 @@ public class MouseRay : MonoBehaviour
 
     ClickToMove ClickToMoveRef;
     Outline OutlineRef;
-    //AutoAttack AutoAttackRef;
 
     // Start is called before the first frame update
     void Start()
     {
         ClickToMoveRef = GetComponent<ClickToMove>();
         OutlineRef = GetComponent<Outline>();
-        //AutoAttackRef = GetComponent<AutoAttack>();
     }
 
 
@@ -36,12 +34,6 @@ public class MouseRay : MonoBehaviour
             {
                 OutlineRef.OutlineMaterial = mCharacterOutlineMaterial;
                 OutlineRef.ApplyOutline(hit.transform.gameObject); //apply outline
-
-                //if (Input.GetMouseButtonDown(0)) //if mouse down
-                //{
-                //    //AutoAttackRef.Attack(hit);
-                //    ClickToMoveRef.StopMoving();
-                //}
 
                 if (Input.GetMouseButtonDown(0)) //move
                 {
@@ -61,10 +53,6 @@ public class MouseRay : MonoBehaviour
             else
             {
                 OutlineRef.RemoveOutline(); //remove outline
-                //if (Input.GetMouseButtonDown(0)) //move
-                //{
-                //    ClickToMoveRef.MoveToClickPoint(hit);
-                //}
                 if (Input.GetMouseButtonDown(0)) //move
                 {
                     ClickToMoveRef.MoveToClickPoint(hit, true);

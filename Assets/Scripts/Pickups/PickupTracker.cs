@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////
 /// Creator : Chris Johnson
 /// Date Created : 24/05/2023
-/// Purpose : 
+/// Purpose : hold all items that have been picked up and have functions to edit the list
 /////////////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;

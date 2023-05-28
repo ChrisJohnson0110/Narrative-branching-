@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////
 /// Creator : Chris Johnson
 /// Date Created : 24/05/2023
-/// Purpose : 
+/// Purpose : when the player is with in the trigger collider, enable the given gameobejct
 /////////////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
@@ -9,14 +9,12 @@ using UnityEngine;
 
 public class Interact : MonoBehaviour
 {
-    [SerializeField] GameObject gPopUp; //
+    [SerializeField] GameObject gPopUp; //text pop up to display
 
-    /// <summary>
-    /// 
-    /// </summary>
+
     private void Start()
     {
-        gPopUp.SetActive(false);
+        gPopUp.SetActive(false); //hide pop up
     }
 
     /// <summary>

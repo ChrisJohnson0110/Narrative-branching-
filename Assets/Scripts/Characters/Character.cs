@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////
 /// Creator : Chris Johnson
 /// Date Created : 24/05/2023
-/// Purpose : 
+/// Purpose : script to attach to the npcs this handles all character dialog
 /////////////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
@@ -104,6 +104,13 @@ public class Character : MonoBehaviour
         {
             bIsQuestTwoActive = true;
         }
+
+        gDialogBox.gameObject.GetComponent<Text>().text = "Quest: " + a_iQuestToActivate .ToString() + " Taken";
+        gDialogBox.SetActive(true); //show the characters dialog
+
+        //start the timer for how long the dialog will be visable
+        fTimer = fTimerStart;
+        bTimerActive = true;
     }
 
 
@@ -125,7 +132,7 @@ public class Character : MonoBehaviour
                     {
                         bCanPickQuestOne = true;
                     }
-                    if (lt.GetMostVistedArea().gameObject.name == qCharacterQuest.sQuestConditionTwo) //if the most visited area is
+                    if (qCharacterQuest.sQuestConditionTwo.Contains(lt.GetMostVistedArea().gameObject.name)) //if the most visited area is
                     {
                         bCanPickQuestTwo = true;
                     }
@@ -136,7 +143,6 @@ public class Character : MonoBehaviour
                             "</color> <color=blue>Quest two-" + bCanPickQuestTwo.ToString() + "</color> Press one or two to pick";
                     }
                 }
-
             }
         }
 
@@ -154,7 +160,10 @@ public class Character : MonoBehaviour
             }
             else
             {
-                gDialogBox.gameObject.GetComponent<Text>().text = qCharacterQuest.sQuestPromptOne;
+                if (bQuestComplete == false)
+                {
+                    gDialogBox.gameObject.GetComponent<Text>().text = qCharacterQuest.sQuestPromptOne;
+                }
             }
         }
         else if (bIsQuestTwoActive == true)
@@ -169,9 +178,6 @@ public class Character : MonoBehaviour
                 gDialogBox.gameObject.GetComponent<Text>().text = qCharacterQuest.sQuestPromptTwo;
             }
         }
-
-        
-
 
         gDialogBox.SetActive(true); //show the characters dialog
 
@@ -209,22 +215,5 @@ public class Character : MonoBehaviour
         }
         return false;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 

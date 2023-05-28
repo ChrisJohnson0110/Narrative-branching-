@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////
 /// Creator : Chris Johnson
 /// Date Created : 24/05/2023
-/// Purpose : 
+/// Purpose : The attached object will follow the players movement - intended for camera
 /////////////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;

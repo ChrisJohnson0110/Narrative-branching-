@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////
 /// Creator : Chris Johnson
 /// Date Created : 24/05/2023
-/// Purpose : 
+/// Purpose : allow the player to do a quick dash
 /////////////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
@@ -42,22 +42,25 @@ public class Dash : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// dash
+    /// </summary>
     IEnumerator DashSpace()
     {
-        isDashing = true;
+        isDashing = true; //prevent another dash wile active
 
-        float fOriginalSpeed = navAgent.speed;
-        navAgent.speed = fDashSpeed;
+        float fOriginalSpeed = navAgent.speed; //store original speed
+        navAgent.speed = fDashSpeed; //set speed to dashing speed
 
-        float fElapsedTime = 0f;
-        while (fElapsedTime < fDashDuration)
+        float fElapsedTime = 0f; //start time
+        while (fElapsedTime < fDashDuration) //dash for duration
         {
-            navAgent.speed = Mathf.Lerp(fDashSpeed, fOriginalSpeed, fElapsedTime / fDashDuration);
-            fElapsedTime += Time.deltaTime;
+            navAgent.speed = Mathf.Lerp(fDashSpeed, fOriginalSpeed, fElapsedTime / fDashDuration); //apply speed
+            fElapsedTime += Time.deltaTime; //increase time
             yield return null;
         }
-        navAgent.speed = fOriginalSpeed;
-        isDashing = false;
+        navAgent.speed = fOriginalSpeed; //set speed back after dash
+        isDashing = false; //allow to dash again
     }
 
 
