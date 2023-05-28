@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 162f9586eb955c140bab56669c97fb46, type: 3}
-  m_Name: Snow_Branch
+  m_Name: Snow_Branch_SnowStay
   m_EditorClassIdentifier: 
-  sQuestPrompt: 
-  sCompletedDialog: 
+  sQuestPrompt: 1
+  sCompletedDialog: 2
   sItemName: Branch
-  sAreaName: SnowArea
-  sSpecialConditionMetDialog: 
+  sAreaName: SnowHillAccessed
+  sSpecialConditionMetDialog: 3
   sSpecialAreaName: SnowStay

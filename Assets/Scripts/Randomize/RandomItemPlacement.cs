@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class RandomItemPlacement : MonoBehaviour
 {
+
+    [SerializeField] GameObject goItemToPlace;
+    [SerializeField] Vector2 v2AreaSize = new Vector2(5,5);
+
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
+        //create pickup item within bounds
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        float x = Random.Range(transform.position.x - v2AreaSize.x, transform.position.x + v2AreaSize.x);
+        float y = Random.Range(transform.position.z - v2AreaSize.x, transform.position.z + v2AreaSize.y);
+
+        GameObject go =  Instantiate(goItemToPlace, new Vector3(x, transform.position.y + 0.1f, y), goItemToPlace.transform.rotation);
+        go.transform.SetParent(this.transform);
     }
 }

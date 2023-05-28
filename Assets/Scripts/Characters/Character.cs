@@ -119,6 +119,13 @@ public class Character : MonoBehaviour
             }
         }
 
+
+
+
+
+
+
+
         gDialogBox.SetActive(true); //show the characters dialog
 
         //start the timer for how long the dialog will be visable
@@ -135,7 +142,7 @@ public class Character : MonoBehaviour
         PickupTracker pt = FindAnyObjectByType<PickupTracker>();
         foreach (GameObject g in pt.li_gPickedUpObjects)
         {
-            if (g.gameObject.name == qCharacterQuest.sItemName) //if the item needed for the quest has been found
+            if (g.gameObject.name.Contains(qCharacterQuest.sItemName)) //if the item needed for the quest has been found
             {
                 pt.RemovePickUpObject(g); //remove the item from the list
                 return true;
