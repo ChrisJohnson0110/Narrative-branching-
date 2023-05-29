@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 162f9586eb955c140bab56669c97fb46, type: 3}
-  m_Name: Rock_Flowers_RockStay
+  m_Name: Cactus_Pickaxe
   m_EditorClassIdentifier: 
   sQuestConditionOne: 
   sQuestConditionTwo: 
-  sQuestPromptOne: 
-  sQuestPromptTwo: 
-  sQuestOneItem: 
-  sQuestTwoItem: 
-  sQuestCompleteOne: 
-  sQuestCompleteTwo: 
+  sQuestPromptOne: I need some cactus for a potion I'm brewing, could you help me
+    find some
+  sQuestPromptTwo: I lost my pickaxe when caving, could you retrieve it for me
+  sQuestOneItem: Cactus
+  sQuestTwoItem: Pickaxe
+  sQuestCompleteOne: That just what I needed, now I can brew this potion
+  sQuestCompleteTwo: Thank you so much, now I can go back to mining

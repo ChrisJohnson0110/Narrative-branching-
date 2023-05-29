@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 162f9586eb955c140bab56669c97fb46, type: 3}
+  m_Name: RockyFlowers_Branch
+  m_EditorClassIdentifier: 
+  sQuestConditionOne: RuneRockAccessed (UnityEngine.GameObject)
+  sQuestConditionTwo: ForestStay (UnityEngine.GameObject)
+  sQuestPromptOne: Could you help find me some flowers in the mountains, I want to
+    brew a potion
+  sQuestPromptTwo: Find me a branch,  I'm in need of fire wood
+  sQuestOneItem: RockyFlowers
+  sQuestTwoItem: Branch
+  sQuestCompleteOne: Perfect, thank you so much, now I can brew a potion to heal
+    my sick brother
+  sQuestCompleteTwo: Cheers, this will keep the fire burning

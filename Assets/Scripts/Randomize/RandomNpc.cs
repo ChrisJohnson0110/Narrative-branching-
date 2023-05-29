@@ -36,14 +36,15 @@ public class RandomNpc : MonoBehaviour
 
                 newCharacter.GetComponent<Character>().qCharacterQuest = new Quest();
 
-                newCharacter.GetComponent<Character>().qCharacterQuest = qQuestsToGiveNpcs[Random.Range(0, qQuestsToGiveNpcs.Count)];
+                int iQuestToGive = Random.Range(0, qQuestsToGiveNpcs.Count);
+                newCharacter.GetComponent<Character>().qCharacterQuest = qQuestsToGiveNpcs[iQuestToGive];
+                qQuestsToGiveNpcs.Remove(qQuestsToGiveNpcs[iQuestToGive]); //remove the quest
 
                 //set the two conditions for starting either quest
 
                 newCharacter.GetComponent<Character>().qCharacterQuest.sQuestConditionOne = LocationTrackerRef.li_gLocationsAccessed //set to a location
                     [Random.Range(0, LocationTrackerRef.li_gLocationsAccessed.Count)] //a random location
                     .ToString(); //the locations name
-
 
                 newCharacter.GetComponent<Character>().qCharacterQuest.sQuestConditionTwo = LocationTrackerRef.li_gTimeSpentInEachArea //set to a location
                     [Random.Range(0, LocationTrackerRef.li_gTimeSpentInEachArea.Count)] //a random location

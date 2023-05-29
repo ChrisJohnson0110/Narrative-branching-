@@ -42,6 +42,8 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] Color cInactiveButtonColor = new Color(0.5f, 0.5f, 0.5f);
 
+
+
     void Start()
     {
         if (!StartMenu | !InfoMenu | !StorySelectorMenu | !InGameMenu | !StoriesCompleted) //if any menu not found menu will not display

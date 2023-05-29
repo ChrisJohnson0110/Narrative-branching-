@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////
 /// Creator : Chris Johnson
 /// Date Created : 24/05/2023
-/// Purpose : script to attach to the npcs this handles all character dialog
+/// Purpose : script to attach to the npcs this handles all character dialog - story one
 /////////////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
@@ -175,7 +175,10 @@ public class Character : MonoBehaviour
             }
             else
             {
-                gDialogBox.gameObject.GetComponent<Text>().text = qCharacterQuest.sQuestPromptTwo;
+                if (bQuestComplete == false)
+                {
+                    gDialogBox.gameObject.GetComponent<Text>().text = qCharacterQuest.sQuestPromptTwo;
+                }
             }
         }
 
@@ -192,7 +195,7 @@ public class Character : MonoBehaviour
     /// </summary>
     bool QuestHandInCheck()
     {
-        PickupTracker pt = FindAnyObjectByType<PickupTracker>();
+        PickupTracker pt = FindAnyObjectByType<PickupTracker>(); //find pickup tracker
 
         foreach (GameObject g in pt.li_gPickedUpObjects)
         {

@@ -66,4 +66,13 @@ public class MainMenuButtons : MonoBehaviour
         SceneManager.LoadScene("StoryTwo", LoadSceneMode.Additive);
         MainMenuRef.UpdateCurrentMenu(MainMenu.Menus.InGame);
     }
+    
+    /// <summary>
+    /// open the form url
+    /// </summary>
+    public void OpenFormURL()
+    {
+        Application.OpenURL("https://forms.gle/4k7vW5sGwA1ahDwY9");
+    }
+
 }

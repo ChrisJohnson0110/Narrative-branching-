@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 162f9586eb955c140bab56669c97fb46, type: 3}
+  m_Name: RockyFlowers_Bird
+  m_EditorClassIdentifier: 
+  sQuestConditionOne: FarmAccessed (UnityEngine.GameObject)
+  sQuestConditionTwo: ForestStay (UnityEngine.GameObject)
+  sQuestPromptOne: I'd love if you could find some flowers that I could give to my
+    husband
+  sQuestPromptTwo: I'd love if you could hunt a bird for me in the autumn forest
+    I'd love to disect one
+  sQuestOneItem: RockyFlowers
+  sQuestTwoItem: Bird
+  sQuestCompleteOne: Thank you so much, my husband will love these
+  sQuestCompleteTwo: This is the perfect test subject

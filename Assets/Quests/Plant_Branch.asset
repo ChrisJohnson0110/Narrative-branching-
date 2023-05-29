@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 162f9586eb955c140bab56669c97fb46, type: 3}
+  m_Name: Plant_Branch
+  m_EditorClassIdentifier: 
+  sQuestConditionOne: 
+  sQuestConditionTwo: 
+  sQuestPromptOne: Could you look for signs of life in the snowy mountains, I've
+    noticed life seems to be dying out
+  sQuestPromptTwo: Could you find me a branch in the forest, I'm in need of a walking
+    stick
+  sQuestOneItem: Plant
+  sQuestTwoItem: Branch
+  sQuestCompleteOne: This is great news, I can let everyone know life is persisting
+  sQuestCompleteTwo: Thank you, this will help me walk again
