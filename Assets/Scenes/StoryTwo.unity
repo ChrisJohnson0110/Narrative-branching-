@@ -3124,7 +3124,10 @@ PrefabInstance:
     - target: {fileID: 2283262454685230219, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
       propertyPath: sQuestPrompt
-      value: 111
+      value: Hey, yes im the farmer. If you're looking for food i'll give you some
+        of my bread but its not for free, find me some corn I'm in need of some seeds
+        to start growning them, take a loom to the west I used to have some growning
+        there maybe youll find some remains
       objectReference: {fileID: 0}
     - target: {fileID: 2283262454685230219, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
@@ -3139,7 +3142,10 @@ PrefabInstance:
     - target: {fileID: 2283262454685230219, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
       propertyPath: sQuestRewardMessage
-      value: 222
+      value: Perfect now I can revive my corn crops, heres the bread you wanted.
+        If you're looking for the treasure I'd suggest you give up but if you must
+        insist go to the miner, you can find him in the south of the rocky's he might
+        know what to do
       objectReference: {fileID: 0}
     - target: {fileID: 8854226122480029947, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
@@ -4405,7 +4411,10 @@ PrefabInstance:
     - target: {fileID: 2283262454685230219, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
       propertyPath: sQuestPrompt
-      value: 111
+      value: Looking for the treasure you say? The desert is a dangerous place as
+        long as you're prepared I wont stop you. There's a rumored oasis in this
+        desert that is where the treasure is said to be hidden, many have died looking,
+        I wish you luck
       objectReference: {fileID: 0}
     - target: {fileID: 2283262454685230219, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
@@ -4420,7 +4429,8 @@ PrefabInstance:
     - target: {fileID: 2283262454685230219, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
       propertyPath: sQuestRewardMessage
-      value: 222
+      value: wow I cant beleve you made it back, I must spread the word, tales of
+        your triumph will be spread across this land
       objectReference: {fileID: 0}
     - target: {fileID: 8854226122480029947, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
@@ -5429,7 +5439,10 @@ PrefabInstance:
     - target: {fileID: 2283262454685230219, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
       propertyPath: sQuestPrompt
-      value: 111
+      value: Treasure you say, I do like me some treasure. In order to reach the
+        treasure of this land you'll need to be able to breath underwater, for that
+        youll need a pickaxe to mine the materials. Grab mine from the cave to the
+        east
       objectReference: {fileID: 0}
     - target: {fileID: 2283262454685230219, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
@@ -5444,7 +5457,9 @@ PrefabInstance:
     - target: {fileID: 2283262454685230219, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
       propertyPath: sQuestRewardMessage
-      value: 222
+      value: Nice, with my pickaxe you'll be able to get the flowers for the potion
+        you need. Head north you'll find a man who can brew that potion for you,
+        he can point out the flower you'll need too
       objectReference: {fileID: 0}
     - target: {fileID: 8854226122480029947, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
@@ -10866,7 +10881,8 @@ PrefabInstance:
     - target: {fileID: 2283262454685230219, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
       propertyPath: sQuestPrompt
-      value: 111
+      value: Oh the dwarf sent you, I can help I suppose. Grab me that flower over
+        there and ill make you your potion.
       objectReference: {fileID: 0}
     - target: {fileID: 2283262454685230219, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
@@ -10881,7 +10897,8 @@ PrefabInstance:
     - target: {fileID: 2283262454685230219, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
       propertyPath: sQuestRewardMessage
-      value: 222
+      value: With this your potion is made, now get out of here. Head to the hermit
+        in the desert let him help you.
       objectReference: {fileID: 0}
     - target: {fileID: 8854226122480029947, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
@@ -22212,7 +22229,10 @@ PrefabInstance:
     - target: {fileID: 2283262454685230219, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
       propertyPath: sQuestPrompt
-      value: 
+      value: Youve come to this land to find the treasure you say? Well let me start
+        you on your quest, youll need potions for your travels, but inorder to gather
+        the materials you'll need some skis, look around the south of the forest
+        I know I left them somewhere there
       objectReference: {fileID: 0}
     - target: {fileID: 2283262454685230219, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
@@ -22232,7 +22252,8 @@ PrefabInstance:
     - target: {fileID: 2283262454685230219, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
       propertyPath: sQuestRewardMessage
-      value: 
+      value: Perfect with these youll be able to gather the potion materials, look
+        for eric at the edge of the snow he'll know where to look for them
       objectReference: {fileID: 0}
     - target: {fileID: 8854226122480029947, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
@@ -38915,7 +38936,9 @@ PrefabInstance:
     - target: {fileID: 2283262454685230219, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
       propertyPath: sQuestPrompt
-      value: 111
+      value: Hey, yes im eric, looking for potion flowers you say. you must mean
+        the gem flowers found here, take a look up the mountain in the south west
+        you cant miss them
       objectReference: {fileID: 0}
     - target: {fileID: 2283262454685230219, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
@@ -38930,7 +38953,9 @@ PrefabInstance:
     - target: {fileID: 2283262454685230219, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
       propertyPath: sQuestRewardMessage
-      value: 222
+      value: Goodjob let me make you the potion you need quickly. Now thats done,
+        take a look in the northern autumn forest, youll be able to find a farmer
+        he can point you in the direction of food
       objectReference: {fileID: 0}
     - target: {fileID: 8854226122480029947, guid: 5b8ad481296f3654abf8c3db5f8021dc,
         type: 3}
